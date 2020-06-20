@@ -4,33 +4,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Get with IT</title>
-        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css">
     </head>
 </html>
- <body>
+ <body class="main">
   
   <div>
-    <header>
-      <h1>
-        <a href="/">Get with IT</a>
+    <header class="uk-flex uk-flex-between uk-background-muted uk-padding uk-panel">
+      <h1 class="uk-heading-bullet">
+        <a href="/" class="nav">Get with IT</a>
       </h1>
-      <nav>
+      <button class="uk-button uk-button-text uk-button-large" type="button"><span uk-icon="icon: menu; ratio:3"></span></button>
+      <div uk-dropdown>
+        <ul class="uk-nav uk-dropdown-nav"></ul>
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
+        <li class="uk-active"><a href="/dashboard" class="uk-button uk-button-link">dashboard</a></li>
+        <li class="uk-active "><button id="logout" class="uk-button uk-button-link">logout</button></li>
         {{else}}
-        <a href="/login">login</a>
+        <li class="uk-active"><a href="/login" class="nav">login</a></li>
         {{/if}}
-      </nav>
+        </ul>
+      </div>
     </header>
-    <main>
+    <main >
       {{{ body }}}
     </main>
-    <footer>
-      <h4>Get with IT is a blog page dedicated to all things Information Tech.</h4>
+    <footer class="uk-position-bottom-center">
+      <h6 class="foot-text">Get with IT is a blog page dedicated to all things Information Tech.</h4>
     </footer>
   </div>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
 </body>
