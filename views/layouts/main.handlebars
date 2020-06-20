@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Get with IT</title>
+        <title >Get with IT</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css">
     </head>
 </html>
@@ -11,10 +11,10 @@
   
   <div>
     <header class="uk-flex uk-flex-between uk-background-muted uk-padding uk-panel">
-      <h1 class="uk-heading-bullet">
+      <h1 class="uk-heading-bullet uk-text-bold">
         <a href="/" class="nav">Get with IT</a>
       </h1>
-      <button class="uk-button uk-button-text uk-button-large" type="button"><span uk-icon="icon: menu; ratio:3"></span></button>
+      <button class="uk-button uk-button-text uk-button-large uk-text-primary" type="button"><span uk-icon="icon: menu; ratio:3"></span></button>
       <div uk-dropdown>
         <ul class="uk-nav uk-dropdown-nav"></ul>
         {{#if loggedIn}}
@@ -29,8 +29,8 @@
     <main >
       {{{ body }}}
     </main>
-    <footer class="uk-position-bottom-center">
-      <h6 class="foot-text">Get with IT is a blog page dedicated to all things Information Tech.</h4>
+    <footer >
+      <h6 class="foot-text uk-text-meta">Get with IT is a blog page dedicated to all things Information Tech.</h4>
     </footer>
   </div>
   {{#if loggedIn}}
