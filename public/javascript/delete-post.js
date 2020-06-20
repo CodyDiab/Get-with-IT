@@ -1,19 +1,3 @@
-// async function deleteFormHandler(event) {
-//     event.preventDefault();
-//     const id = window.location.toString().split('/') [
-//         window.location.toString().split('/').length-1]
-
-//         const response = await fetch(`/api/posts/${id}`, {
-//             method: 'DELETE'
-  
-//   })
-//     if(response.ok) {
-//        document.location.replace('/dashboard/');
-//      } else {
-//          alert(response.statusText);
-//   }
-// }
-//   document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
 
 async function deleteFormHandler(event) {
     event.preventDefault();
@@ -23,7 +7,7 @@ async function deleteFormHandler(event) {
     ];
  
     
-    const resComment = await fetch(`/api/comments/${id}`, {
+    const delComment = await fetch(`/api/comments/${id}`, {
        method: 'GET',
        headers: {
          'Content-Type': 'application/json'
@@ -31,13 +15,13 @@ async function deleteFormHandler(event) {
      })
        .then(response => response.json());
  
-    for (var i = 0; i < resComment.length; i++){
+    for (var i = 0; i < delComment.length; i++){
        console.log(resComment[i].id);
-       await fetch(`/api/comments/${resComment[i].id}`, {
+       await fetch(`/api/comments/${delComment[i].id}`, {
           method: 'DELETE'
        });
  
-          console.log(`Deleted Comment ${resComment[i].id}`);
+          console.log(`Deleted Comment ${delComment[i].id}`);
     }
  
  
