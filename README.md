@@ -22,7 +22,9 @@
     
   ## Usage
   To initiat connection on local port run server.js
-  undefined
+   
+      npm run start
+
   ## License
   No License
   ## Contributing
